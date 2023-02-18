@@ -18,6 +18,8 @@ import { removeBookId } from "../utils/localStorage";
 const SavedBooks = () => {
   // const [userData, setUserData] = useState({});
 
+  const [removeBook, { error, updatedUser }] = useMutation(REMOVE_BOOK);
+
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
 
@@ -57,8 +59,6 @@ const SavedBooks = () => {
     }
 
     try {
-      const [removeBook, { error, updatedUser }] = useMutation(REMOVE_BOOK);
-
       // const response = await deleteBook(bookId, token);
 
       // if (!response.ok) {
@@ -66,7 +66,7 @@ const SavedBooks = () => {
       // }
 
       // const updatedUser = await response.json();
-      setUserData(updatedUser);
+      // setUserData(updatedUser);
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
