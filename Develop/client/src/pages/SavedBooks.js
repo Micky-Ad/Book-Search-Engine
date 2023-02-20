@@ -21,10 +21,13 @@ const SavedBooks = () => {
   const [removeBook, { error, updatedUser }] = useMutation(REMOVE_BOOK);
 
   // use this to determine if `useEffect()` hook needs to run again
-  const userDataLength = Object.keys(userData).length;
 
   const { loading, userData } = useQuery(GET_ME);
 
+  const userDataLength = 0;
+  if (userData !== null && userData !== undefined) {
+    userDataLength = Object.keys(userData).length;
+  }
   // useEffect(() => {
   //   const getUserData = async () => {
   //     try {
@@ -75,7 +78,7 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  if (!userDataLength) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 
@@ -86,7 +89,7 @@ const SavedBooks = () => {
           <h1>Viewing saved books!</h1>
         </Container>
       </Jumbotron>
-      <Container>
+      {/* <Container>
         <h2>
           {userData.savedBooks.length
             ? `Viewing ${userData.savedBooks.length} saved ${
@@ -120,7 +123,7 @@ const SavedBooks = () => {
             );
           })}
         </CardColumns>
-      </Container>
+      </Container> */}
     </>
   );
 };
