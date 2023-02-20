@@ -40,8 +40,8 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route path="/" element={<SearchBooks />} />
-            <Route path="/saved" element={<SavedBooks />} />
+            <Route path="/" component={<SearchBooks />} />
+            <Route path="/saved" component={<SavedBooks />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
