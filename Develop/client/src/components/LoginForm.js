@@ -35,11 +35,7 @@ const LoginForm = () => {
           password: userFormData.password,
         },
       });
-      // const response = await loginUser(userFormData);
 
-      // const { token, user } = await response.json();
-
-      // Auth.login(token);
       Auth.login(response.data.login.token);
     } catch (err) {
       console.error(err);

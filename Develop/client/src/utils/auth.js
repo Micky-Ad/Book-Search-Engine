@@ -1,9 +1,5 @@
 // use this to decode a token and get the user's information out of it
 import decode from "jwt-decode";
-// const jwt = require("jsonwebtoken");
-
-// const secret = "mysecretssshhhhhhh";
-// const expiration = "2h";
 
 // create a new class to instantiate for a user
 class AuthService {
@@ -18,11 +14,6 @@ class AuthService {
     const token = this.getToken();
     return !!token && !this.isTokenExpired(token); // handwaiving here
   }
-
-  // signToken({ email, name, _id }) {
-  //   const payload = { email, name, _id };
-  //   return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-  // }
 
   // // check if token is expired
   isTokenExpired(token) {
