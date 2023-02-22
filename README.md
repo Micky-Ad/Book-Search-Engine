@@ -29,14 +29,17 @@ The project involved a starter code with a fully functioning Google Books API se
 
 ## Installation
 -----------------------------------------------------------------------
-The following npm installs are recommended: "bootstrap": "^4.4.1",
-•	graphql
-•	react
-•	react-bootstrap
-•	react-dom
-•	react-router-dom
-•	react-scripts
-•	concurrently
+The following npm installs are recommended: 
+
+-	graphql
+-	react
+- react-bootstrap
+- react-dom
+- react-router-dom
+- react-scripts
+- concurrently
+
+
 # Links
 -----------------------------------------------------------------------
 ### [Demo Video]()
@@ -49,7 +52,8 @@ The following npm installs are recommended: "bootstrap": "^4.4.1",
 
 # Usage:
 ----------------------------------------------------------------------
--	A book search engine site that utilizes Google Books API and GraphQL API
+-	A book search engine site that utilizes Google Books API and GraphQL API.
+
 # License:
 -----------------------------------------------------------------------
 [MIT](https://choosealicense.com/licenses/mit/)
