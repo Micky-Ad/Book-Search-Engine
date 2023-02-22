@@ -48,7 +48,7 @@ The following npm installs are recommended:
 
 # Screenshot:
 ----------------------------------------------------------------------
- ![Home Page]()
+ ![Home Page](Develop/assets/screenshot.PNG)
 
 # Usage:
 ----------------------------------------------------------------------
