@@ -4,7 +4,7 @@ const typeDefs = gql`
   # Define which fields are accessible from the model
   input BookInput {
     authors: [String]
-    describtion: String
+    description: String
     title: String
     bookId: String
     image: String

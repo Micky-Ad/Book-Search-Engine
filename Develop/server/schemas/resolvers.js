@@ -1,11 +1,11 @@
 const { AuthenticationError } = require("apollo-server-express");
+const { model } = require("mongoose");
 const { User, Book } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
-      console.log(context);
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
@@ -36,18 +36,24 @@ const resolvers = {
 
       return { token, user };
     },
-    saveBook: async (
-      parent,
-      { authors, describtion, title, bookId, image, link }
-    ) => {
-      const books = await Book.create({
-        authors: authors,
-        describtion: describtion,
-        title: title,
-        bookId: bookId,
-        image: image,
-        link: link,
+    saveBook: async (parent, args, context) => {
+      const BookModel = model("Book", Book);
+
+      const book = await BookModel.create({
+        authors: args.input.authors,
+        description: args.input.description,
+        title: args.input.title,
+        bookId: args.input.bookId,
+        image: args.input.image,
+        link: args.input.link,
       });
+
+      let x = await User.updateOne(
+        { _id: context.user._id },
+        { $push: { savedBooks: book } }
+      );
+
+      return context.user;
     },
     removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
